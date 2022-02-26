@@ -14,7 +14,7 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
     # Fill in end
 
     recv = clientSocket.recv(1024).decode()
-    print(recv) #You can use these print statement to validate return codes from the server.
+    #print(recv) #You can use these print statement to validate return codes from the server.
     #if recv[:3] != '220':
     #    print('220 reply not received from server.')
 
@@ -22,7 +22,7 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
     heloCommand = 'HELO Alice\r\n'
     clientSocket.send(heloCommand.encode())
     recv1 = clientSocket.recv(1024).decode()
-    print(recv1)
+    #print(recv1)
     #if recv1[:3] != '250':
     #    print('250 reply not received from server.')
 
@@ -48,7 +48,7 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
     # Fill in start
     clientSocket.send('DATA\r\n').encode()
     recv = clientSocket.recv(1024).decode()
-    print(recv)
+    #print(recv)
     #if recv[:3] != '354':
     #    print('354 reply has not been received by mail server')
     # Fill in end
@@ -75,5 +75,5 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
     # Fill in end
 
 
-#if __name__ == '__main__':
-#    smtp_client(1025, '127.0.0.1')
+if __name__ == '__main__':
+    smtp_client(1025, '127.0.0.1')
